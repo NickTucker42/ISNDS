@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{D2A7F8CC-6173-49C1-98C7-43BF9DE6594F}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="NicksADS2R.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="NicksADS2D.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="NicksADS2R">
+			<MSBuild Projects="NicksADS2R.dproj"/>
+		</Target>
+		<Target Name="NicksADS2R:Clean">
+			<MSBuild Projects="NicksADS2R.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="NicksADS2R:Make">
+			<MSBuild Projects="NicksADS2R.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="NicksADS2D">
+			<MSBuild Projects="NicksADS2D.dproj"/>
+		</Target>
+		<Target Name="NicksADS2D:Clean">
+			<MSBuild Projects="NicksADS2D.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="NicksADS2D:Make">
+			<MSBuild Projects="NicksADS2D.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="NicksADS2R;NicksADS2D"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="NicksADS2R:Clean;NicksADS2D:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="NicksADS2R:Make;NicksADS2D:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>
