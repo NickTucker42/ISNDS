@@ -9,7 +9,7 @@ unit NTADS2;
 
  [TNTADS2]
    Version = V 3.3.0.0
-   Copyright © 2002 - 2015 by Nick Tucker
+   Copyright Â© 2002 - 2015 by Nick Tucker
 
 This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -936,7 +936,7 @@ var res       : PChar;
     ss        : sockaddr;
 
 begin
- //CN=NTDS Settings,CN=GLUSEH-SP420006,CN=Servers,CN=USEH-P,CN=Sites,CN=Configuration,DC=novartis,DC=net
+
  if Trim(Computer) = '' then  //Get the PDCe for the current domain
  Begin
   Computer := Self.Info.PDCEmulator;
